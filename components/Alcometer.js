@@ -1,12 +1,23 @@
 
-import { Button, Text, TextInput, SafeAreaView, ScrollView, View, Alert, Pressable } from 'react-native';
+import { Button, Text, TextInput, SafeAreaView, ScrollView, View, Alert, Platform, Pressable } from 'react-native';
 import Radiobutton from '../components/Radiobutton';
 import {Picker} from '@react-native-picker/picker';
 import React,{useState} from 'react';
 import styles from '../style/style';
+import { render } from 'react-dom';
+//import Alert from "react-native-awesome-alerts";
+
 
 export default function Alcometer() {
 
+  const simpleAlert = () => {
+    alert('Sorry, your weight is missing, Please enter your weight')
+  }
+  const OptionAlert = () => {
+    alert('Sorry, your weight is missing, Please enter your weight' , [
+      {text: 'understood', onPress: () => console.log('alert closed')}
+    ])
+  }
   const [weight, setWeight] = useState('');
   const [bottles, setBottles] = useState(0); 
   const [time, setTime] = useState(0);
@@ -14,7 +25,7 @@ export default function Alcometer() {
   const [alc, setAlc] = useState(0);
   
   const handleValueChange=(itemValue, itemIndex) =>setBottles(itemValue);
-  const [gender2, setGender2]= useState('no Radio Selection')
+ 
   const gender3=[
     {
       label: 'male',
@@ -57,6 +68,8 @@ export default function Alcometer() {
     {label: 'Female', value: 'female'}
   ]
 
+
+
   function calculate() {
     let result = 0;
    
@@ -71,21 +84,32 @@ export default function Alcometer() {
         result = ((((bottles * 0.33) * 8 * 4.5)- (time* (weight / 10))) / (weight * 0.6)).toFixed(2);}
       
     } 
-    else {
-      
+    else if (weight == '' || weight <= 0 ) {
+     
+    if (Platform.OS === 'web') {
+        simpleAlert();
+        
+        
+     } else {
       Alert.alert('Sorry, your weight is missing', 'Please enter your weight', [
+        {text: 'understood', onPress: () => console.log('alert closed')}]) 
+      }
+     
+       
+      //simpleAlert();
+      //OptionAlert();
+      /*  Alert.alert('Sorry, your weight is missing', 'Please enter your weight', [
         {text: 'understood', onPress: () => console.log('alert closed')}
-      ]) 
+      ])    */
       
     }
     setAlc(result);
   }
- 
 
   
  
 
-  
+
     return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
