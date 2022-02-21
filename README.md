@@ -8,11 +8,8 @@ Assignment for the University of Applied Sciences in Oulu, Finnland. The assignm
 4. [License](#license)
 ## Application Languaguage
 [React-Native](https://reactnative.dev )
-[React-Native]
-[1]:https://reactnative.dev     "React-Native"
-Some text.
 ## Getting Started
-some text.
+The application was created using [Expo CLI](https://docs.expo.dev/workflow/expo-cli/) using the command '''init test-alcometer'''
 ## Connecting it to your phone
 some text.
 ## License
