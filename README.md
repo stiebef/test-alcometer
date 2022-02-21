@@ -12,4 +12,4 @@ The application was created using [Expo CLI](https://docs.expo.dev/workflow/expo
 After starting it using ```expo start```, you can choose to open th eproject in web or in the "Expo Go" app. 
 In order to open it in the "Expo Go" app it is advisable to use```npm install @expo/ngrok@4.1.0```and avoid issues connecting the "Expo Go" app via LAN.
 ## License
-some text
+Licensed under the [MIT License](LICENSE).
