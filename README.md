@@ -7,6 +7,7 @@ Assignment for the University of Applied Sciences in Oulu, Finnland. The assignm
 3. [Connecting it to your phone](#connecting-it-to-your-phone)
 4. [License](#license)
 ## Application Languaguage
+[React-Native] (https://reactnative.dev )
 [React-Native]
 [1]:https://reactnative.dev     "React-Native"
 Some text.
