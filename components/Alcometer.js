@@ -14,7 +14,7 @@ export default function Alcometer() {
     alert('Sorry, your weight is missing, Please enter your weight')
   }
   const OptionAlert = () => {
-    alert('Sorry, your weight is missing, Please enter your weight' , [
+    Alert.alert('Sorry, your weight is missing, Please enter your weight' , [
       {text: 'understood', onPress: () => console.log('alert closed')}
     ])
   }
@@ -91,8 +91,9 @@ export default function Alcometer() {
         
         
      } else {
+       //OptionAlert();
       Alert.alert('Sorry, your weight is missing', 'Please enter your weight', [
-        {text: 'understood', onPress: () => console.log('alert closed')}]) 
+        {text: 'understood', onPress: () => console.log('alert closed')}])  
       }
      
        
